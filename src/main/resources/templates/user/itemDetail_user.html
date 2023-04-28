@@ -229,9 +229,12 @@
                             <span>유형</span>
                         </div>rate-info end -->
                         <div class="rate-info" style="margin-top: 15px;">                        	
-                            <button type="button" class="btn4">♥</button>
-                            <button class="btn3" onclick="location.href='http://localhost:8080/newzips/reservation_user_contract1'">방문예약</button>                            
-                            <button class="btn3" onclick="location.href='http://localhost:8080/newzips/reservation_user_contract1'">매물계약</button>                            
+                            <button type="button" class="btn4"><i class="la la-heart-o" ></i></button>
+                            
+                            <button class="btn3" th:onclick="|location.href='@{/newzips/reservation_user/__${dtoR.itemId}__}'|">방문예약</button>                     
+                            <button class="btn3" th:onclick="|location.href='@{/newzips/reservation_user/__${dtoR.itemId}__}'|">매물계약</button>                     
+                            
+                                                        
                         </div>
                     </div><!--card end-->
                 </div><!---property-hd-sec end-->

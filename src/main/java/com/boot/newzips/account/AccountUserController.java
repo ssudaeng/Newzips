@@ -147,5 +147,41 @@ public class AccountUserController {
 		
 	}
 	
+	@PostMapping("/findPwd")
+	public ModelAndView findPwd(HttpServletRequest request) throws Exception{
+		
+		ModelAndView mav = new ModelAndView("jsonView");
+		
+		String userName = request.getParameter("userName");
+		String userId = request.getParameter("userId");
+		String userPhone = request.getParameter("userPhone");
+		
+		System.out.println("==================================");
+		System.out.println("findId");
+		
+		System.out.println(userName);
+		System.out.println(userId);
+		System.out.println(userPhone);
+		
+		String userPwd = null;
+		
+		Map<String, Object> params= new HashMap<String, Object>();
+		params.put("userName", userName);
+		params.put("userPhone", userPhone);
+		
+		try {
+			userId = accountUserService.findId(params);
+			System.out.println("=================");
+			System.out.println(userPwd);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		mav.addObject("userPwd", userPwd);
+		
+		return mav;
+		
+	}
+	
 	
 }

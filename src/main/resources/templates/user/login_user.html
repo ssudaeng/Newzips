@@ -25,6 +25,28 @@
                 </form>
             </div>
         </div><!--popup end-->
+
+		<!-- 비밀번호 찾기 팝업 -->
+        <div class="popup" id="sign-popup">
+            <h3>아이디 찾기</h3>
+            <div class="popup-form">
+                <form th:action="@{/newzips/findPwd}" method="post">
+             		    <input type="hidden" th:name="${_csrf.parameterName}" id="token" th:value="${_csrf.token}"/>
+                    <div class="form-field">
+                        <input type="text" name="userName" id="userName" placeholder="이름">  
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="userId" id="userId" placeholder="아이디">  
+                    </div>
+                    <div class="form-field">
+                        <input type="text" name="userPhone" id="userPhone" placeholder="핸드폰 번호">
+                    </div>
+
+                    <button type="button" class="btn2" onclick="findPwd()">비밀번호 찾기</button>
+                    
+                </form>
+            </div>
+        </div><!--popup end-->
         
 
  
